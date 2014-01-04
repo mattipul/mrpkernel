@@ -1,4 +1,4 @@
-#include <stdint.h>
+#include "stdint.h"
 
 uint16_t* kernel_debug_buffer;
 

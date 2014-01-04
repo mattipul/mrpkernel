@@ -13,4 +13,4 @@ mkdir -p isodir/boot
 cp ./bin/kernel.bin isodir/boot/kernel.bin
 mkdir -p isodir/boot/grub
 cp ./compile/grub.cfg isodir/boot/grub/grub.cfg
-~/grub/bin/grub-mkrescue --xorriso="$HOME/xoriso/bin" -o kernel.iso isodir
+grub-mkrescue -o kernel.iso isodir

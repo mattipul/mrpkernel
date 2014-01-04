@@ -4,6 +4,6 @@
 unsigned short int *kernel_debug_buffer;
 
 void kernel_debug_init();
-void kernel_debug_putchar();
+void kernel_debug_putchar(char c);
 
 #endif

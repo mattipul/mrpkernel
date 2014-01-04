@@ -1,6 +1,4 @@
-#include "stdint.h"
-
-uint16_t* kernel_debug_buffer;
+unsigned short int *buffer;
 
 void kernel_main(){
 	

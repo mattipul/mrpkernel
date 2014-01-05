@@ -24,14 +24,11 @@ struct ALLOCATED_MEMORY{
 	struct MEMORY_AREA allocated_memory_header;
 }
 
-struct KERNEL_ARCHIVES{
-	struct INTERUPT_HANDLERS interrupt_handlers;
-	struct PROCESS_TABLE processes;
-	struct DETECTED_MEMORY memory_map;
-	struct ALLOCATED_MEMORY allocated_memory_areas;
-	SMAP_entry_t* kernel_smap;
-};
+struct INTERRUPT_HANDLERS interrupt_handlers;
+struct PROCESS_TABLE processes;
+struct DETECTED_MEMORY memory_map;
+struct ALLOCATED_MEMORY allocated_memory_areas;
+SMAP_entry_t* kernel_smap;
 
-struct KERNEL_ARCHIVES *kernel_archives;
 
 #endif

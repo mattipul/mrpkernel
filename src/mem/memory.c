@@ -11,7 +11,9 @@ int memory_detect(){
 	int entry_count = detectMemory(kernel_smap, smap_size / sizeof(SMAP_entry_t));
 	if (entry_count == -1) {
 		kernel_debug_putchar('A');
+		asm("hlt");
 	} else {
 		kernel_debug_putchar('B');		
+		asm("hlt");
 	}
 }

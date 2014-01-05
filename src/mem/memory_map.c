@@ -1,6 +1,6 @@
 #include "memory_map.h"
 
-//asm(".code16gcc\n");
+asm(".code16gcc\n");
 
 int __attribute__((noinline)) __attribute__((regparm(3))) detectMemory(SMAP_entry_t* buffer, int maxentries)
 {

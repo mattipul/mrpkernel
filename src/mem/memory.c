@@ -6,8 +6,8 @@ int memory_init(){
 }
 
 int memory_detect(){
-	/*kernel_smap=(SMAP_entry_t*) 0x1000;
-	const int smap_size = 0x2000;
+	kernel_smap=(SMAP_entry_t*) 0x1000;
+	/*const int smap_size = 0x2000;
 	int entry_count = detectMemory(kernel_smap, 10);
 	if (entry_count == -1) {
 		kernel_debug_putchar('A');

@@ -1,10 +1,11 @@
 #ifndef MEMORY_MAP_H_GUARD
 #define MEMORY_MAP_H_GUARD
 
+#include <stddef.h>
+#include <stdint.h>
 #include "../archives/kernel_archives.h"
 
-typedef __int32 int32_t;
-typedef unsigned __int32 uint32_t;
+uint8_t memory_buffer;
 
 void memory_map_detect();
 

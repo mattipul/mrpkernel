@@ -1,5 +1,6 @@
 #include "memory.h"
 
+
 int memory_init(){
 	memory_detect();
 }

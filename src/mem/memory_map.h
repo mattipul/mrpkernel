@@ -1,7 +1,6 @@
 #ifndef MEMORY_MAP_H_GUARD
 #define MEMORY_MAP_H_GUARD
 
-#include <stddef.h>
 #include <stdint.h>
 #include "../archives/kernel_archives.h"
 

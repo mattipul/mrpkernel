@@ -12,5 +12,5 @@ unsigned short int io_memory_get_from_memory(void address){
 
 void io_memory_move_in_memory(void address_from, void address_to){
 	unsigned short int mem_data=memory_handler_get_from_memory(address_from);
-	memory_handler_put_into_memory(address_to, mem_data);
+	io_memory_put_into_memory(address_to, mem_data);
 }

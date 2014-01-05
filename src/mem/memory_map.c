@@ -4,9 +4,6 @@
 
 int __attribute__((noinline)) __attribute__((regparm(3))) detectMemory(SMAP_entry_t* buffer, int maxentries)
 {
-	asm volatile(".code16gcc\n");
-	asm volatile("mov %ds,0\n");
-	asm volatile("mov %cs,0\n");
 	uint32_t contID = 0;
 	int entries = 0, signature, bytes;
 	do 

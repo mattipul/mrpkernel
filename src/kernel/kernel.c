@@ -1,3 +1,5 @@
+asm(".code16gcc\n");
+
 #include "kernel.h"
 
 void kernel_init(){

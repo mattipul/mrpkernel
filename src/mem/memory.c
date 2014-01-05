@@ -2,9 +2,6 @@
 
 
 int memory_init(){
-	asm volatile(".code16gcc\n");
-	asm volatile("mov ds,0\n");
-	asm volatile("mov cs,0\n");
 	memory_detect();
 }
 

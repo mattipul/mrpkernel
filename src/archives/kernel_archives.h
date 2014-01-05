@@ -1,4 +1,4 @@
-#ifdef KERNEL_ARCHIVES_H_GUARD
+#ifndef KERNEL_ARCHIVES_H_GUARD
 #define KERNEL_ARCHIVES_H_GUARD
 
 #include <stdint.h>

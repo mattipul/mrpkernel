@@ -2,7 +2,7 @@
 #define KERNEL_ARCHIVES_H_GUARD
 
 #include <stdint.h>
-#include "irq_sturcture.h"
+#include "irq_structure.h"
 #include "process_structure.h"
 #include "memory_structure.h"
 #include "pcb_structure.h"

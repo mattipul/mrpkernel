@@ -2,5 +2,5 @@
 
 void kernel_init(){
 	kernel_debug_init();
-	//memory_init();
+	memory_init();
 }

@@ -3,6 +3,7 @@
 
 struct IRQ_HANDLER{
 	unsigned short int base_function;
+	struct IRQ_HANDLER *next;
 };
 
 #endif

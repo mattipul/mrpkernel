@@ -3,14 +3,7 @@
 
 struct PROCESS_POINTER{
 	unsigned short int address_to_pcb;
-};
-
-struct PCB{
-	int pid;
-	int state;
-	int priority;
-	int priviledges;
-	unsigned short int code;
+	struct PROCESS_POINTER *next;
 };
 
 #endif

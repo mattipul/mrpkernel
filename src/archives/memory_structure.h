@@ -5,6 +5,7 @@ struct MEMORY_AREA{
 	int type;
 	unsigned short int base;
 	unsigned short int length;
+	struct MEMORY_AREA *next;
 };
 
 #endif

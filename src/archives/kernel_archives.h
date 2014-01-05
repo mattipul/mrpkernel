@@ -4,21 +4,22 @@
 #include "irq_sturcture.h"
 #include "process_structure.h"
 #include "memory_structure.h"
+#include "pcb_structure.h"
 
 struct INTERRUPT_HANDLERS{
-	struct IRQ_HANDLER **interrupt_handlers;
+	struct IRQ_HANDLER interrupt_handler_header;
 };
 
 struct PROCESS_TABLE{
-	struct PROCESS_POINTER **process_list;
+	struct PROCESS_POINTER process_list_header;
 }
 
 struct DETECTED_MEMORY{
-	struct MEMORY_AREA **memory_areas;
+	struct MEMORY_AREA memory_areas_header;
 };
 
 struct ALLOCATED_MEMORY{
-	struct MEMORY_AREA **allocated_memory;
+	struct MEMORY_AREA allocated_memory_header;
 }
 
 struct KERNEL_ARCHIVES{

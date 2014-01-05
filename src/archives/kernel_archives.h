@@ -14,7 +14,7 @@ struct INTERRUPT_HANDLERS{
 
 struct PROCESS_TABLE{
 	struct PROCESS_POINTER process_list_header;
-}
+};
 
 struct DETECTED_MEMORY{
 	struct MEMORY_AREA memory_areas_header;
@@ -22,7 +22,7 @@ struct DETECTED_MEMORY{
 
 struct ALLOCATED_MEMORY{
 	struct MEMORY_AREA allocated_memory_header;
-}
+};
 
 struct INTERRUPT_HANDLERS interrupt_handlers;
 struct PROCESS_TABLE processes;

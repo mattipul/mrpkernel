@@ -1,11 +1,11 @@
 #include "memory.h"
 
 
-int memory_init(){
+void memory_init(){
 	memory_detect();
 }
 
-int memory_detect(){
+void memory_detect(){
 	SMAP_entry_t* smap = (SMAP_entry_t*) 0x1000;
 	const int smap_size = 0x2000;
  

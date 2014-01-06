@@ -4,6 +4,6 @@
 #include <stdint.h>
 #include "../archives/memory_map_structure.h"
 
-int detectMemory(SMAP_entry_t* buffer, int maxentries);
+void detectMemory(SMAP_entry_t* buffer, int maxentries);
 
 #endif

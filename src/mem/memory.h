@@ -8,7 +8,7 @@
 #include "memory_map.h"
 #include "memory_handler.h"
 
-int memory_init();
-int memory_detect();
+void memory_init();
+void memory_detect();
 
 #endif

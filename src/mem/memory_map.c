@@ -2,7 +2,7 @@
 
 asm(".code16gcc\n");
 
-int __attribute__((noinline)) __attribute__((regparm(3))) detectMemory(SMAP_entry_t* buffer, int maxentries)
+int detectMemory(SMAP_entry_t* buffer, int maxentries)
 {
 	uint32_t contID = 0;
 	int entries = 0, signature, bytes;

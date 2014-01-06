@@ -4,8 +4,8 @@
 
 void detectMemory(SMAP_entry_t* buffer, int maxentries)
 {
-	//uint32_t contID = 0;
-	//int entries = 0, signature, bytes;
+	uint32_t contID = 0;
+	int entries = 0, signature, bytes;
 	/*do 
 	{
 		__asm__ __volatile__ ("int  $0x15" 

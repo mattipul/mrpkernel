@@ -7,7 +7,6 @@ void memory_init(){
 
 void memory_detect(){
 
-
 	SMAP_entry_t* smap = (SMAP_entry_t*) 0x1000;
 	int entry_count=detectMemory(smap);
  

@@ -8,7 +8,7 @@ void memory_init(){
 void memory_detect(){
 
 	SMAP_entry_t* smap = (SMAP_entry_t*) 0x1000;
-	int entry_count=detectMemory(smap);
+	detectMemory(smap);
  
 	/*if (entry_count == -1) {
 		kernel_debug_putchar('A');

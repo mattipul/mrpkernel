@@ -9,7 +9,7 @@ void detectMemory(SMAP_entry_t* buffer, int maxentries)
 	uint32_t contID = 0;
 	int entries = 0, signature, bytes;
 	int i;
-	for(i=0; i<5; i++)
+	for(i=0; i<2; i++)
 	{
 		__asm__ __volatile__ ("int  $0x15" 
 				: "=a"(signature), "=c"(bytes), "=b"(contID)

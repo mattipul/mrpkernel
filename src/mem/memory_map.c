@@ -6,7 +6,7 @@ int __attribute__((noinline)) __attribute__((regparm(3))) detectMemory(SMAP_entr
 {
 	uint32_t contID = 0;
 	int entries = 0, signature, bytes;
-	do 
+	/*do 
 	{
 		__asm__ __volatile__ ("int  $0x15" 
 				: "=a"(signature), "=c"(bytes), "=b"(contID)
@@ -22,6 +22,6 @@ int __attribute__((noinline)) __attribute__((regparm(3))) detectMemory(SMAP_entr
 			entries++;
 		}
 	} 
-	while (contID != 0 && entries < maxentries);
+	while (contID != 0 && entries < maxentries);*/
 	return entries;
 }

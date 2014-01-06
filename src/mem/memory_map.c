@@ -23,6 +23,9 @@ void detectMemory(SMAP_entry_t* buffer, int maxentries)
 		}
 	} 
 	while (contID != 0 && entries < maxentries);*/
-	asm volatile("int $0x15");
+	 __asm__ __volatile__ ("int  $0x15"
+	                     : "=a"(signature), "=c"(bytes), "=b"(contID)
+	                     : "a"(0xE820), "b"(contID), "c"(24), "d"(0x534D4150), "D"(buffer));
+	                                                                 
 //	return entries;
 }

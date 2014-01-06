@@ -24,3 +24,5 @@ void detectMemory(SMAP_entry_t* buffer)
                                                                
 	//return entries;
 }
+
+__asm__(".code32\n");

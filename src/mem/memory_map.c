@@ -4,8 +4,8 @@ asm(".code16gcc\n");
 
 int detectMemory(SMAP_entry_t* buffer, int maxentries)
 {
-	uint32_t contID = 0;
-	int entries = 0, signature, bytes;
+	//uint32_t contID = 0;
+	//int entries = 0, signature, bytes;
 	/*do 
 	{
 		__asm__ __volatile__ ("int  $0x15" 
@@ -23,5 +23,5 @@ int detectMemory(SMAP_entry_t* buffer, int maxentries)
 		}
 	} 
 	while (contID != 0 && entries < maxentries);*/
-	return entries;
+//	return entries;
 }

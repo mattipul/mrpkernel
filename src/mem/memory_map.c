@@ -25,9 +25,9 @@ void detectMemory(SMAP_entry_t* buffer, int maxentries)
 			entries++;
 		}
 		
-		//if(contID!=0){
-		//	break;
-		//}
+		if(contID==0){
+			break;
+		}
 	} 
 	//while (contID != 0 && entries < 1);	                                                                 
 //	return entries;

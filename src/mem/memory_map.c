@@ -6,7 +6,7 @@ void detectMemory(SMAP_entry_t* buffer)
 {
 	uint32_t contID = 0;
 	int entries = 0, signature, bytes;
-
+	kernel_debug_putchar('M');
 	__asm__ __volatile__ ("int  $0x15" 
 				: "=a"(signature), "=c"(bytes), "=b"(contID)
 				: "a"(0xE820), "b"(contID), "c"(24), "d"(0x534D4150), "D"(buffer));
@@ -25,4 +25,4 @@ void detectMemory(SMAP_entry_t* buffer)
 	//return entries;
 }
 
-__asm__(".code32\n");
+

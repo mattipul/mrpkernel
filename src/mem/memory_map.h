@@ -2,6 +2,7 @@
 #define MEMORY_MAP_H_GUARD
 
 #include <stdint.h>
+#include "../debug/kernel_debug.h"
 #include "../archives/memory_map_structure.h"
 
 void detectMemory(SMAP_entry_t* buffer);

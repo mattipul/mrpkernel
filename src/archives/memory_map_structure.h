@@ -3,13 +3,11 @@
 
 #include <stdint.h>
 
-typedef struct SMAP_entry {
-	uint32_t BaseL;
-	uint32_t BaseH;
-	uint32_t LengthL; 
-	uint32_t LengthH;
-	uint16_t Type; 
-	uint16_t ACPI; 
-}__attribute__((packed)) SMAP_entry_t;
+typedef struct multiboot_memory_map {
+	unsigned int size;
+	unsigned int base_addr_low,base_addr_high;
+	unsigned int length_low,length_high;
+	unsigned int type;
+} multiboot_memory_map_t;
 
 #endif

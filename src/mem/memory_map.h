@@ -2,8 +2,9 @@
 #define MEMORY_MAP_H_GUARD
 
 #include <stdint.h>
+#include "multiboot.h"
 #include "../archives/memory_map_structure.h"
 
-int detectMemory(SMAP_entry_t* buffer, int maxentries);
+void detectMemory(multiboot_info_t* mbd);
 
 #endif

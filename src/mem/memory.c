@@ -1,19 +1,10 @@
 #include "memory.h"
 
 
-void memory_init(){
-	memory_detect();
+void memory_init(multiboot_info_t* mbd){
+	memory_detect(mbd);
 }
 
-void memory_detect(){
-
-
-	SMAP_entry_t* smap = (SMAP_entry_t*) 0x1000;
-	int entry_count=detectMemory(smap);
- 
-	/*if (entry_count == -1) {
-		kernel_debug_putchar('A');
-	} else {
-		kernel_debug_putchar('B');
-	}*/
+void memory_detect(multiboot_info_t* mbd){
+	detectMemory(mbd);
 }

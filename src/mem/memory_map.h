@@ -5,6 +5,6 @@
 #include "../include/multiboot.h"
 #include "../archives/memory_map_structure.h"
 
-void detectMemory(multiboot_info_t* mbd);
+void memory_map_detect_memory(multiboot_info_t* mbd);
 
 #endif

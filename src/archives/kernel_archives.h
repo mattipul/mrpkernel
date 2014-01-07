@@ -2,7 +2,7 @@
 #define KERNEL_ARCHIVES_H_GUARD
 
 #include <stdint.h>
-#include "multiboot.h"
+#include "../include/multiboot.h"
 #include "irq_structure.h"
 #include "process_structure.h"
 #include "memory_structure.h"

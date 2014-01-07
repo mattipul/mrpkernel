@@ -2,7 +2,7 @@
 #define MEMORY_H_GUARD
 
 #include <stdint.h>
-#include "multiboot.h"
+#include "../include/multiboot.h"
 #include "../debug/kernel_debug.h"
 #include "../archives/kernel_archives.h"
 #include "io_memory.h"

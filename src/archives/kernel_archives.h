@@ -9,5 +9,6 @@
 #include "pcb_structure.h"
 #include "memory_map_structure.h"
 
+multiboot_info_t* kernel_archives_mbd;
 
 #endif

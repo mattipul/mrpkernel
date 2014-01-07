@@ -10,6 +10,6 @@
 #include "../processes/process.h"
 #include "../scheduler/scheduler.h"
 
-void kernel_init(multiboot_info_t* mbd);
+void kernel_init();
 
 #endif

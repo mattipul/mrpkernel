@@ -1,6 +1,6 @@
 #include "kernel.h"
 
-void kernel_init(multiboot_info_t* mbd){
+void kernel_init(){
 	kernel_debug_init();
-	memory_init(mbd);
+	memory_init();
 }

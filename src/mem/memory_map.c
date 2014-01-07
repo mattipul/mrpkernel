@@ -3,7 +3,9 @@
 void memory_map_detect_memory(multiboot_info_t* mbd){
 	multiboot_memory_map_t* mmap = mbd->mmap_addr;	
 	while(mmap < mbd->mmap_addr + mbd->mmap_length) {
-		kernel_debug_putchar('0'+mmap->type);
+		if(mmap->type == 1){
+			kernel_debug_putchar('0'+mmap->type);
+		}
 		mmap = (multiboot_memory_map_t*) ( (unsigned int)mmap + mmap->size + sizeof(unsigned int) );
 	}
 }

@@ -6,6 +6,6 @@ void memory_init(multiboot_info_t* mbd){
 
 void memory_detect(multiboot_info_t* mbd){
 	memory_map_detect_memory(mbd);
-//	kernel_debug_putchar('S');
+	kernel_debug_putchar('S');
 }
 

@@ -7,5 +7,6 @@
 #include "../archives/memory_map_structure.h"
 
 void memory_map_detect_memory(multiboot_info_t* mbd);
+void memory_map_is_usable(uint16_t address);
 
 #endif

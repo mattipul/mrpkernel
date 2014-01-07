@@ -2,5 +2,6 @@
 
 void detectMemory(multiboot_info_t* mbd)
 {
-
 }
+
+

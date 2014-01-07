@@ -7,6 +7,8 @@ void memory_map_detect_memory(multiboot_info_t* mbd){
 	
 	if(mmap->type < 4){
 		kernel_debug_putchar('O');
+	}else{
+		kernel_debug_putchar('R');
 	}
 
 	while(mmap < mbd->mmap_addr + mbd->mmap_length) {

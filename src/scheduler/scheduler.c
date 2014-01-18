@@ -70,7 +70,6 @@ void scheduler_block_current_process(){
 	kernel_process_queue_header->current_process->state=0;
 	kernel_process_queue_header->current_process->used=0;
 	kernel_process_queue_header->current_process=0;
-	kernel_process_queue_header->current_process=0;
 }
 
 void scheduler_set_current_process(struct PROCESS_PCB* process){
@@ -84,6 +83,7 @@ void scheduler_give_turn(int pid){
 
 void scheduler_jump_to_process(){
 	void (*process_main_function)(void);
+	kernel_debug_putchar('B');
 	process_main_function=kernel_process_queue_header->current_process->process_main_function;
 	process_main_function();
 }
@@ -99,6 +99,5 @@ void scheduler_next(){
 
 void scheduler_wait(){
 	while(kernel_process_queue_header->count == 0);
-	kernel_debug_putchar('A');
 	scheduler_next();
 }

@@ -46,6 +46,6 @@ void kernel_init_process_list(){
 }
 
 void kernel_run(){
-	kernel_debug_binary(memory_stack_pointer);
+	kernel_debug_binary(kernel_memory_area_header->first);
 	scheduler_wait();
 }

@@ -10,7 +10,8 @@ void kernel_init(){
 	kernel_init_process_list();
 
 	struct PROCESS_PCB *curpcb=process_create();
-	curpcb->segment->base_address[0]=process1;
+	uint16_t *prc_addr=curpcb->segment->base_address;
+	prc_addr[0]=(uint8_t[]){ 0x66, 0xc7, 0x05, 0x00, 0x80, 0x0b, 0x00, 0x41, 0x1f };
 	kernel_debug_binary(curpcb);
 	kernel_debug_yplus();
 	scheduler_enqueue(curpcb);

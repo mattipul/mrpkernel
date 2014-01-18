@@ -20,7 +20,7 @@ int scheduler_create_list_node(){
 		new_queuen->used=0;
 		new_queuen->next=0;
 		new_queuen->prev=mqueuen;
-		mqueuen->next=new_queue;
+		mqueuen->next=new_queuen;
 		kernel_process_queue_header->last=new_queuen;
 		memory_stack_pointer+=sizeof(struct PROCESS_QUEUE);
 		return 1;
@@ -44,8 +44,8 @@ void scheduler_enqueue(struct PROCESS_PCB *pcb){
 	struct PROCESS_QUEUE *mqueuen=kernel_process_queue_header->first;
 	while(mqueuen!=0){
 		if(mqueuen->used == 0){
-			queuen->used=1;
-			queuen->process=pcb;
+			mqueuen->used=1;
+			mqueuen->process=pcb;
 			break;
 		}
 		mqueuen=mqueuen->next;
@@ -59,7 +59,7 @@ void scheduler_dequeue(){
 		while(queuen!=0){
 			struct PROCESS_QUEUE *m_queuen=queuen->next;
 			queuen->used=m_queuen->used;
-			queuen->state=m_queuen->state;
+			queuen->process->state=m_queuen->process->state;
 			queuen->process=m_queuen->process;
 			queuen=queuen->next;
 		}

@@ -15,8 +15,10 @@ void kernel_init(){
 	kernel_debug_binary(curpcb);
 	kernel_debug_yplus();
 	scheduler_enqueue(curpcb);
-	kernel_debug_binary((uint16_t)prc_addr[0][0]);
+	//kernel_debug_binary((uint16_t)prc_addr[0][0]);
 	//kernel_run();
+	__asm__ volatile("push %%eax" :: "a" (prc_addr):);
+	__asm__ volatile("ret");
 }
 
 void kernel_init_memory_area(){

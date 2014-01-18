@@ -15,9 +15,9 @@ void kernel_init(){
 	
 	struct PROCESS_PCB *curpcb=process_create();
 	curpcb->process_main_function=&test_process;	
-	scheduler_enqueue(curpcb);
+	//scheduler_enqueue(curpcb);
 	
-	kernel_run();
+	//kernel_run();
 }
 
 void kernel_init_memory_area(){

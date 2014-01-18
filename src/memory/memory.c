@@ -33,7 +33,7 @@ int memory_malloc(struct MEMORY_AREA *marea_malloc){
 		return 0;
 	}else{
 		while(marea->next!=0){
-			if(marea_free == marea){
+			if(marea == marea_malloc){
 				marea->used=1;
 				return 1;
 			}

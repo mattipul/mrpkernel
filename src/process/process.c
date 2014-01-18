@@ -10,7 +10,7 @@ int process_create_pcb(){
 		new_pcb->next=0;
 		new_pcb->prev=0;
 		new_pcb->state=0;
-		pid_count++;
+		pid_counter++;
 		memory_stack_pointer+=sizeof(struct PROCESS_PCB);
 		kernel_pcb_header->first=new_pcb;
 		return 1;
@@ -27,7 +27,7 @@ int process_create_pcb(){
 		new_pcb->state=0;
 		mpcb->next=new_pcb;
 		kernel_pcb_header->last=new_pcb;
-		pid_count++;
+		pid_counter++;
 		memory_stack_pointer+=sizeof(struct PROCESS_PCB);
 		return 1;
 	}
@@ -51,11 +51,11 @@ int process_create(){
 		if(mpcb->used == 0){
 			mpcb->used=1;
 			mpcb->segment=process_allocate_memory_area();
-			return 1;
+			return mpcb->pid;
 		}
 		mpcb=mpcb->next;
 	}
-	return pid_counter;
+	return 0;
 }
 
 int process_destroy(int pid){
@@ -68,5 +68,5 @@ int process_destroy(int pid){
 		}
 		mpcb=mpcb->next;
 	}
-	return 0
+	return 0;
 }

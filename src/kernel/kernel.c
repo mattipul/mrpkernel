@@ -17,8 +17,7 @@ void kernel_init(){
 	scheduler_enqueue(curpcb);
 	//kernel_debug_binary((uint16_t)prc_addr[0][0]);
 	//kernel_run();
-	//__asm__ volatile("push %0\n"
-	//		 "ret"::"r"(prc_addr):);
+	__asm__ volatile("jmp %0"::"r"(prc_addr):);
 }
 
 void kernel_init_memory_area(){

@@ -5,9 +5,9 @@ void kernel_init(){
 	pid_counter=0;
 	memory_stack_pointer=MEMORY_BLOCK_START;
 	process_counter=0;
-	//kernel_init_memory_area();
-	//kernel_init_pcb();
-	//kernel_init_process_list();
+	kernel_init_memory_area();
+	kernel_init_pcb();
+	kernel_init_process_list();
 	kernel_run();
 }
 
@@ -18,7 +18,7 @@ void kernel_init_memory_area(){
 	kernel_memory_area_header->last=0;
 	int i;
 	for(i=0; i<MAX_MEMORY_BLOCKS; i++){
-		//memory_block(MAX_MEMORY_BLOCKS*sizeof(struct MEMORY_AREA)+MINUS_FROM_AVAILABLE_SPACE+(i*BLOCK_SIZE),BLOCK_SIZE);
+		memory_block(MAX_MEMORY_BLOCKS*sizeof(struct MEMORY_AREA)+MINUS_FROM_AVAILABLE_SPACE+(i*BLOCK_SIZE),BLOCK_SIZE);
 	}
 }
 
@@ -46,5 +46,6 @@ void kernel_init_process_list(){
 }
 
 void kernel_run(){
+	kernel_debug_putchar('A');
 	scheduler_wait();
 }

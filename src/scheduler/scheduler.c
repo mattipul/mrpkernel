@@ -93,6 +93,7 @@ void scheduler_next(){
 		scheduler_block_current_process();
 		scheduler_dequeue();
 	}
+	kernel_debug_binary(kernel_process_queue_header->first);
 	scheduler_set_current_process(kernel_process_queue_header->first);
 	scheduler_jump_to_process();
 }

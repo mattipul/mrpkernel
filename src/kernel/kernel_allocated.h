@@ -6,7 +6,7 @@
 #include "../scheduler/process_queue_header.h"
 
 struct MEMORY_AREA_HEADER *kernel_memory_area_header;
-struct PCB_HEADER *kernel_pcb_header;
+struct PROCESS_PCB_HEADER *kernel_pcb_header;
 struct PROCESS_QUEUE_HEADER *kernel_process_queue_header;
 
 int pid_counter;

@@ -46,5 +46,6 @@ void kernel_init_process_list(){
 }
 
 void kernel_run(){
+	kernel_debug_putchar('A');
 	scheduler_wait();
 }

@@ -9,12 +9,10 @@ void kernel_init(){
 	kernel_init_pcb();
 	kernel_init_process_list();
 
-	int cur_pid=process_create();
-	kernel_debug_binary(cur_pid);
+	struct PROCESS_PCB *curpcb=process_create();
+	kernel_debug_binary(curpcb);
 	kernel_debug_yplus();
-	cur_pid=process_create();
-	kernel_debug_binary(cur_pid);
-	kernel_debug_yplus();
+	scheduler_enqueue(curpcb);
 	kernel_run();
 }
 

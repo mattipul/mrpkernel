@@ -10,7 +10,7 @@
 
 int process_create_pcb();
 struct MEMORY_AREA* process_allocate_memory_area();
-int process_initialize(unsigned int size);
+struct PROCESS_PCB* process_initialize(unsigned int size);
 int process_destroy(int pid);
 
 #endif

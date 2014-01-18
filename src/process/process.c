@@ -45,13 +45,13 @@ struct MEMORY_AREA* process_allocate_memory_area(){
 	return 0;
 }
 
-int process_create(){
+struct PROCESS_PCB* process_create(){
 	struct PROCESS_PCB *mpcb=kernel_pcb_header->first;
 	while(mpcb!=0){
 		if(mpcb->used == 0){
 			mpcb->used=1;
 			mpcb->segment=process_allocate_memory_area();
-			return mpcb->pid;
+			return mpcb;
 		}
 		mpcb=mpcb->next;
 	}

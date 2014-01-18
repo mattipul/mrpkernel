@@ -1,4 +1,4 @@
 mrpkernel
 =========
 
-mrpKERNEL - Kernel for mrpOS
+mrpKERNEL - Kernel for x86

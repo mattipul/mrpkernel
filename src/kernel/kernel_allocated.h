@@ -1,6 +1,7 @@
 #ifndef KERNEL_ALLOCATED_H_GUARD
 #define KERNEL_ALLOCATED_H_GUARD
 
+#include <stdint.h>
 #include "../memory/memory_area_header.h"
 #include "../process/pcb_header.h"
 #include "../scheduler/process_queue_header.h"

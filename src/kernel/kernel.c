@@ -2,15 +2,16 @@
 
 void kernel_init(){
 	kernel_debug_init();
-	kernel_init();
-	kernel_init_memory_area();
-	kernel_init_pcb();
-	kernel_init_process_list();
+	pid_counter=0;
+	memory_stack_pointer=MEMORY_BLOCK_START;
+	process_counter=0;
+	//kernel_init_memory_area();
+	//kernel_init_pcb();
+	//kernel_init_process_list();
 	kernel_run();
 }
 
 void kernel_init_memory_area(){
-	memory_stack_pointer=MEMORY_BLOCK_START;
 	kernel_memory_area_header=memory_stack_pointer;
 	memory_stack_pointer+=sizeof(struct MEMORY_AREA_HEADER);
 	kernel_memory_area_header->first=0;

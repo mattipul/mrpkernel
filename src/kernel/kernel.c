@@ -17,7 +17,7 @@ void kernel_init_memory_area(){
 	kernel_memory_area_header->last=0;
 	int i;
 	for(i=0; i<MAX_MEMORY_BLOCKS; i++){
-		memory_block(MAX_MEMORY_BLOCKS*sizeof(struct MEMORY_AREA)+MINUS_FROM_AVAILABLE_SPACE+(i*BLOCK_SIZE),BLOCK_SIZE);
+		//memory_block(MAX_MEMORY_BLOCKS*sizeof(struct MEMORY_AREA)+MINUS_FROM_AVAILABLE_SPACE+(i*BLOCK_SIZE),BLOCK_SIZE);
 	}
 }
 

@@ -6,9 +6,9 @@
 #include "../scheduler/process_queue.h"
 #include "../scheduler/process_queue_header.h"
 
-#define MEMORY_BLOCK_START
-#define MEMORY_BLOCK_LENGTH
-#define BLOCK_SIZE
+#define MEMORY_BLOCK_START 0x00000500 
+#define MEMORY_BLOCK_LENGTH (0x00007BFF-0x00000500)
+#define BLOCK_SIZE 512
 
 #define MAX_PROCESS_COUNT 10
 #define MAX_PROCESS_COUNT_IN_QUEUE 10

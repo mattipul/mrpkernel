@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 #include "pcb.h"
+#include "../kernel/kernel_defines.h"
+#include "../kernel/kernel_allocated.h"
 #include "../memory/memory.h"
 #include "../memory/memory_area.h"
 

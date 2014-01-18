@@ -2,6 +2,8 @@
 #define MEMORY_H_GUARD
 
 #include <stdint.h>
+#include "../kernel/kernel_defines.h"
+#include "../kernel/kernel_allocated.h"
 #include "../debug/kernel_debug.h"
 #include "memory_area.h"
 

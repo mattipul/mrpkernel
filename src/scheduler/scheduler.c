@@ -99,5 +99,6 @@ void scheduler_next(){
 
 void scheduler_wait(){
 	while(kernel_process_queue_header->count == 0);
+	kernel_debug_putchar('A');
 	scheduler_next();
 }

@@ -29,9 +29,9 @@ void kernel_init(){
 	//kernel_debug_yplus();
 	//scheduler_enqueue(curpcb);
 	void (*proc)();
-	proc=&test_process_1;
-	proc();
-	//kernel_debug_binary(prc_addr);
+	//proc=&prc_addr[0];
+	//proc();
+	kernel_debug_binary(prc_addr[0]);
 	//kernel_debug_binary((uint16_t)prc_addr[0][0]);
 	//kernel_run();
 }

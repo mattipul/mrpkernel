@@ -25,10 +25,12 @@ void kernel_init(){
 	uint16_t *prc_addr=curpcb->segment->base_address;
 	prc_addr[0]=&test_process_1;
 	
-	kernel_debug_binary(curpcb);
-	kernel_debug_yplus();
-	scheduler_enqueue(curpcb);
-	exec_process((void (*)())prc_addr[0]);
+	//kernel_debug_binary(curpcb);
+	//kernel_debug_yplus();
+	//scheduler_enqueue(curpcb);
+	void (*proc)();
+	proc=prc_addr[0];
+	exec_process(proc);
 	//kernel_debug_binary((uint16_t)prc_addr[0][0]);
 	//kernel_run();
 }

@@ -1,6 +1,8 @@
 #ifndef PCB_H_GUARD
 #define PCB_H_GUARD
 
+#include "../memory/memory_area.h"
+
 struct PROCESS_PCB{
 	int pid;
 	int used;

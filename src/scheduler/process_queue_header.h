@@ -2,7 +2,7 @@
 #define PROCESS_QUEUE_HEADER_H_GAURD
 
 #include "../process/pcb.h"
-#include "../process_queue.h"
+#include "process_queue.h"
 
 struct PROCESS_QUEUE_HEADER{
 	int used;

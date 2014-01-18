@@ -3,7 +3,7 @@
 void kernel_init(){
 	kernel_debug_init();
 	kernel_init();
-	//kernel_init_memory_area();
+	kernel_init_memory_area();
 	//kernel_init_pcb();
 	//kernel_init_process_list();
 	//kernel_run();

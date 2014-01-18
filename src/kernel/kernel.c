@@ -31,6 +31,8 @@ void kernel_init(){
 	void (*proc)();
 	//proc=&prc_addr[0];
 	//proc();
+	kernel_debug_binary(&test_process_1);
+	kernel_debug_yplus();
 	kernel_debug_binary(prc_addr[0]);
 	//kernel_debug_binary((uint16_t)prc_addr[0][0]);
 	//kernel_run();

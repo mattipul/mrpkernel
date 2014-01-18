@@ -30,8 +30,8 @@ void kernel_init(){
 	//scheduler_enqueue(curpcb);
 	void (*proc)();
 	proc=prc_addr[0];
-	//proc();
-	kernel_debug_binary(prc_addr);
+	proc();
+	//kernel_debug_binary(prc_addr);
 	//kernel_debug_binary((uint16_t)prc_addr[0][0]);
 	//kernel_run();
 }

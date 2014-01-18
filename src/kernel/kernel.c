@@ -1,15 +1,7 @@
 #include "kernel.h"
 
-void test_process_1(){
-	kernel_debug_binary(1);
-}
-
-void test_process_2(){
+void test_process(){
 	kernel_debug_binary(2);
-} 
-
-void exec_process(void (*process_t)()){
-	process_t();
 }
 
 void kernel_init(){
@@ -20,22 +12,12 @@ void kernel_init(){
 	kernel_init_memory_area();
 	kernel_init_pcb();
 	kernel_init_process_list();
-
-	struct PROCESS_PCB *curpcb=process_create();
-	uint16_t *prc_addr=curpcb->segment->base_address;
-	prc_addr[0]=&test_process_1;
 	
-	//kernel_debug_binary(curpcb);
-	//kernel_debug_yplus();
-	//scheduler_enqueue(curpcb);
-	void (*proc)();
-	proc=(void (*)())prc_addr[0];
-	proc();
-	//kernel_debug_binary(&test_process_1);
-	//kernel_debug_yplus();
-	//kernel_debug_binary(prc_addr[0]);
-	//kernel_debug_binary((uint16_t)prc_addr[0][0]);
-	//kernel_run();
+	struct PROCESS_PCB *curpcb=process_create();
+	curpcb->process_main_function=&test_process;	
+	scheduler_enqueue(curpcb);
+	
+	kernel_run();
 }
 
 void kernel_init_memory_area(){
@@ -73,11 +55,5 @@ void kernel_init_process_list(){
 }
 
 void kernel_run(){
-	//kernel_debug_binary(kernel_memory_area_header->first);
-	//kernel_debug_yplus();
-	//kernel_debug_binary(kernel_pcb_header->first);
-	//kernel_debug_yplus();
-	//kernel_debug_binary(kernel_memory_area_header->first->base_address);
 	scheduler_wait();
-	kernel_debug_binary(2);
 }

@@ -6,7 +6,7 @@ int process_create_pcb(){
 		struct PROCESS_PCB *new_pcb=memory_stack_pointer;
 		new_pcb->pid=pid_counter;
 		new_pcb->used=0;
-		new_pcb->segment=0;
+		new_pcb->process_main_function=0;
 		new_pcb->next=0;
 		new_pcb->prev=0;
 		new_pcb->state=0;
@@ -21,7 +21,7 @@ int process_create_pcb(){
 		struct PROCESS_PCB *new_pcb=memory_stack_pointer;
 		new_pcb->pid=pid_counter;
 		new_pcb->used=0;
-		new_pcb->segment=0;
+		new_pcb->process_main_function=0;
 		new_pcb->next=0;
 		new_pcb->prev=mpcb;
 		new_pcb->state=0;
@@ -50,7 +50,6 @@ struct PROCESS_PCB* process_create(){
 	while(mpcb!=0){
 		if(mpcb->used == 0){
 			mpcb->used=1;
-			mpcb->segment=process_allocate_memory_area();
 			return mpcb;
 		}
 		mpcb=mpcb->next;
@@ -63,7 +62,6 @@ int process_destroy(int pid){
 	while(mpcb!=0){
 		if(mpcb->pid == pid){
 			mpcb->used=0;
-			mpcb->segment->used=0;
 			return 1;
 		}
 		mpcb=mpcb->next;

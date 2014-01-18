@@ -83,8 +83,9 @@ void scheduler_give_turn(int pid){
 }
 
 void scheduler_jump_to_process(){
-	__asm__ volatile("push %%eax" :: "a" (kernel_process_queue_header->current_process->segment):);
-	__asm__ volatile("ret");
+	void (*process_main_function)(void);
+	process_main_function=kernel_process_queue_header->current_process;
+	process_main_function();
 }
 
 void scheduler_next(){

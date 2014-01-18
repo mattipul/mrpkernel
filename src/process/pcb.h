@@ -7,7 +7,7 @@ struct PROCESS_PCB{
 	int pid;
 	int used;
 	int state; //0 BLOCKED, 1 RUNNING
-	struct MEMORY_AREA *segment;
+	int (*process_main_function)(void);
 	struct PROCESS_PCB *next;
 	struct PROCESS_PCB *prev;
 };

@@ -9,7 +9,7 @@ i586-elf-as ./src/boot.as -o ./compile/boot.o
 
 i586-elf-gcc -c ./src/kernel/kernel.c -o ./compile/kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra -I/usr/include -w
 
-i586-elf-gcc -c ./src/scheduler/scheduler.c -o ./compile/kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra -I/usr/include -w
+i586-elf-gcc -c ./src/scheduler/scheduler.c -o ./compile/scheduler.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra -I/usr/include -w
 
 i586-elf-gcc -c ./src/memory/memory.c -o ./compile/memory.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra -I/usr/include -w
 

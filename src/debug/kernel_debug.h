@@ -9,5 +9,6 @@ int kernel_debug_x;
 
 void kernel_debug_init();
 void kernel_debug_putchar(char c);
+void kernel_debug_binary(uint16_t a);
 
 #endif

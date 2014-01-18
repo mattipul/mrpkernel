@@ -5,9 +5,9 @@ void kernel_init(){
 	pid_counter=0;
 	memory_stack_pointer=MEMORY_BLOCK_START;
 	process_counter=0;
-	//kernel_init_memory_area();
-	//kernel_init_pcb();
-	//kernel_init_process_list();
+	kernel_init_memory_area();
+	kernel_init_pcb();
+	kernel_init_process_list();
 	kernel_run();
 }
 

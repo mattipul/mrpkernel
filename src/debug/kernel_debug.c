@@ -15,6 +15,6 @@ void kernel_debug_binary(uint16_t a){
 	for(i=15; i>=0; i--){
 		uint16_t b=(a>>i)&1;
 		kernel_debug_putchar('0'+b);
-		kernel_debug_x++;
+		//kernel_debug_x++;
 	}
 }

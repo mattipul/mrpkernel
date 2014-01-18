@@ -13,7 +13,7 @@ i586-elf-gcc -c ./src/memory/memory.c -o ./compile/memory.o -std=gnu99 -ffreesta
 
 i586-elf-gcc -c ./src/irq/irq.c -o ./compile/irq.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra -I/usr/include -w
 
-i586-elf-gcc -c ./src/process/process.c -o ./compile/memory.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra -I/usr/include -w
+i586-elf-gcc -c ./src/process/process.c -o ./compile/process.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra -I/usr/include -w
 
 i586-elf-gcc -c ./src/debug/kernel_debug.c -o ./compile/kernel_debug.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra -I/usr/include -w
 

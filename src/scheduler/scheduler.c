@@ -69,7 +69,7 @@ void scheduler_dequeue(){
 void scheduler_block_current_process(){
 	kernel_process_queue_header->current_process->state=0;
 	kernel_process_queue_header->current_process->used=0;
-	kernel_process_queue_header->current_process->process=0;
+	kernel_process_queue_header->current_process=0;
 	kernel_process_queue_header->current_process=0;
 }
 

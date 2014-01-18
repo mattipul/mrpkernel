@@ -83,8 +83,8 @@ void scheduler_give_turn(int pid){
 
 void scheduler_jump_to_process(){
 	void (*process_main_function)(void);
-	kernel_debug_putchar('B');
 	process_main_function=kernel_process_queue_header->current_process->process_main_function;
+	kernel_debug_binary(process_main_function);
 	process_main_function();
 }
 

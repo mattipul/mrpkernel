@@ -35,7 +35,7 @@ int process_create_pcb(){
 }
 
 struct MEMORY_AREA* process_allocate_memory_area(){
-	struct MEMORY_ARA *marea=kernel_memory_area_header;
+	struct MEMORY_AREA *marea=kernel_memory_area_header;
 	while(marea!=0){
 		if(marea->used==0){
 			return marea;

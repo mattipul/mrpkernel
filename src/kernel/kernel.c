@@ -51,10 +51,11 @@ void kernel_init_process_list(){
 }
 
 void kernel_run(){
-	kernel_debug_binary(kernel_memory_area_header->first);
-	kernel_debug_yplus();
-	kernel_debug_binary(kernel_pcb_header->first);
-	kernel_debug_yplus();
-	kernel_debug_binary(kernel_memory_area_header->first->base_address);
+	//kernel_debug_binary(kernel_memory_area_header->first);
+	//kernel_debug_yplus();
+	//kernel_debug_binary(kernel_pcb_header->first);
+	//kernel_debug_yplus();
+	//kernel_debug_binary(kernel_memory_area_header->first->base_address);
 	scheduler_wait();
+	kernel_debug_binary(2);
 }

@@ -8,6 +8,10 @@ void kernel_init(){
 	kernel_init_memory_area();
 	kernel_init_pcb();
 	kernel_init_process_list();
+
+	int cur_pid=process_create();
+	kernel_debug_binary(cur_pid);
+	kernel_debug_yplus();
 	kernel_run();
 }
 

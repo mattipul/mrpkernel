@@ -16,8 +16,6 @@ void kernel_init(){
 	kernel_debug_init();
 	irq_init();
 	
-	uint16_t f;
-	uint16_t fg=1<<9;
 	asm volatile("sti\n\t");
 	//kernel_debug_binary(f & fg);
 	

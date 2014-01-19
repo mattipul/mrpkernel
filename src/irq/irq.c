@@ -4,8 +4,8 @@ extern void irq_divide_by_zero_wrapper();
 
 void irq_init(){
 	uint16_t *irq0_addr=0x0000;
-	irq0_addr=&irq_divide_by_zero_wrapper;
-	//kernel_debug_binary(irq0_addr);
+	irq0_addr[0]=&irq_divide_by_zero_wrapper;
+	kernel_debug_binary(irq0_addr[0]);
 }
 
 void irq_divide_by_zero(){

@@ -16,7 +16,37 @@ void kernel_init(){
 	kernel_debug_init();
 //	irq_init();
 	asm volatile(".code16\n\t");
-	__asm__ __volatile__ ("int  $0x15");
+	 __asm__ __volatile__ (
+	     "movb $0x0, %%ah \n\
+	          movb $0x13, %%al \n\
+	               int $0x10"
+	                   :
+	                       :
+	                           :"ax"
+	                             );
+	                             
+	                               /* Draw pixel of color 1 at 5,5: */
+	                                 __asm__ __volatile__ (
+	                                     "movb $0xC,%%ah \n\
+	                                          movb $1, %%al \n\
+	                                               movw $5, %%cx \n\
+	                                                    movw $5, %%dx \n\
+	                                                         int $0x10"
+	                                                            :
+	                                                               :
+	                                                                  :"ax","cx","dx"
+	                                                                    );
+	                                                                    
+	                                                                      /* Reset video mode: */
+	                                                                        __asm__ __volatile__ (
+	                                                                            "movb $0x0, %%ah \n\
+	                                                                                 movb $0x03, %%al \n\
+	                                                                                      int $0x10"
+	                                                                                          :
+	                                                                                              :
+	                                                                                                  :"ax"
+	                                                                                                    );
+	                                                                                                    
 	asm volatile(".code32\n\t");
 	//kernel_debug_binary(f & fg);
 	

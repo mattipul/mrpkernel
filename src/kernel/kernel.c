@@ -30,7 +30,7 @@ void kernel_init(){
      
 	scheduler_enqueue(test_process1_pcb);
 	scheduler_enqueue(test_process2_pcb);	
-	kernel_run();
+//	kernel_run();
 }
 
 void kernel_init_memory_area(){

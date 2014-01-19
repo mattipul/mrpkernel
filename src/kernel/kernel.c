@@ -1,5 +1,7 @@
 #include "kernel.h"
 
+extern void int_test();
+
 void process_1(){
 	while(1){
 		kernel_debug_binary(0);
@@ -15,7 +17,7 @@ void process_2(){
 void kernel_init(){
 	kernel_debug_init();
 	irq_init();
-	
+	int_test();
 	pid_counter=0;
 	memory_stack_pointer=MEMORY_BLOCK_START;
 	process_counter=0;

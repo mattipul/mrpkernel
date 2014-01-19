@@ -18,8 +18,9 @@ void kernel_init(){
 	
 	uint16_t f;
 	uint16_t fg=1<<9;
-	asm volatile("sti");
-	asm volatile("int $0");
+	asm volatile("sti\n"
+		     "int $0\n"
+		     "iret");
 	//kernel_debug_binary(f & fg);
 	
 	pid_counter=0;

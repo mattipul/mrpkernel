@@ -19,10 +19,8 @@ void kernel_init(){
 	uint16_t f;
 	uint16_t fg=1<<9;
 	asm volatile("sti");
-	asm volatile ( "pushf\n\t"
-	               "popl %0"
-	             : "=g"(f) );
-	kernel_debug_binary(f & fg);
+	asm volatile("int $0");
+	//kernel_debug_binary(f & fg);
 	
 	pid_counter=0;
 	memory_stack_pointer=MEMORY_BLOCK_START;

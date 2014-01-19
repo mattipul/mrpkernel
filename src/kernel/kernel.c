@@ -15,7 +15,7 @@ void process_2(){
 void kernel_init(){
 	kernel_debug_init();
 	irq_init();
-	asm("int $0");
+	asm("int $0"::"r"(0x00):);
 	pid_counter=0;
 	memory_stack_pointer=MEMORY_BLOCK_START;
 	process_counter=0;

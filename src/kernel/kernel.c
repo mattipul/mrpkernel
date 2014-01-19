@@ -16,7 +16,7 @@ void kernel_init(){
 	kernel_debug_init();
 	irq_init();
 
-	asm volatile("INT $0x00");
+	asm volatile("INT $0x03");
 	
 	pid_counter=0;
 	memory_stack_pointer=MEMORY_BLOCK_START;

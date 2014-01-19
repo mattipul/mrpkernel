@@ -16,8 +16,7 @@ void kernel_init(){
 	kernel_debug_init();
 //	irq_init();
 	asm volatile(".code16\n\t");
-	asm volatile("sti\n\t"
-		     "int $0x00\n\t");
+	__asm__ __volatile__ ("int  $0x15");
 	asm volatile(".code32\n\t");
 	//kernel_debug_binary(f & fg);
 	

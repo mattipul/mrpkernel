@@ -14,7 +14,7 @@ void process_2(){
 
 void kernel_init(){
 	kernel_debug_init();
-	irq_init();
+//	irq_init();
 	
 	asm volatile("sti\n\t"
 		     "int $0x00\n\t");

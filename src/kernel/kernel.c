@@ -17,6 +17,7 @@ void kernel_init(){
 	irq_init();
 	
 	int f;
+	asm volatile("sti");
 	asm volatile ( "pushf\n\t"
 	               "popl %0"
 	             : "=g"(f) );

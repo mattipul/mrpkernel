@@ -16,7 +16,8 @@ void kernel_init(){
 	kernel_debug_init();
 	irq_init();
 	
-	asm volatile("sti\n\t");
+	asm volatile("sti\n\t"
+		     "int $0x00\n\t");
 	//kernel_debug_binary(f & fg);
 	
 	pid_counter=0;

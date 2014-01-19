@@ -19,6 +19,9 @@
 #include "kernel_defines.h"
 #include "kernel_allocated.h"
 
+void process_1();
+void process_2();
+
 void kernel_init();
 void kernel_init_memory_area();
 void kernel_init_pcb();

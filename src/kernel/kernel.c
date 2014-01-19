@@ -1,7 +1,15 @@
 #include "kernel.h"
 
-void test_process(){
-	kernel_debug_binary(2);
+void process_1(){
+	while(1){
+		kernel_debug_binary(0);
+	}
+}
+
+void process_2(){
+	while(1){
+		kernel_debug_binary(1);
+	}
 }
 
 void kernel_init(){
@@ -13,13 +21,14 @@ void kernel_init(){
 	kernel_init_pcb();
 	kernel_init_process_list();
 	
-	struct PROCESS_PCB *curpcb=process_create();
-	curpcb->process_main_function=&test_process;	
-	//void (*process_main_function)(void);
-	//process_main_function=curpcb->process_main_function;
-	//process_main_function();
-	scheduler_enqueue(curpcb);
-	
+	struct PROCESS_PCB *test_process1_pcb=process_create();
+	test_process1_pcb->process_main_function=&process_1;	
+
+	struct PROCESS_PCB *test_process2_pcb=process_create();
+        test_process2_pcb->process_main_function=&process_2;
+     
+	scheduler_enqueue(test_process1_pcb);
+	scheduler_enqueue(test_process2_pcb);	
 	kernel_run();
 }
 

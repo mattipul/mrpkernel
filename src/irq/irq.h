@@ -2,6 +2,7 @@
 #define IRQ_H_GUARD
 
 #include <stdint.h> 
+#include "../debug/kernel_debug.h"
 #include "../scheduler/scheduler.h"
 
 void irq_init();

@@ -21,7 +21,12 @@ stack_top:
 _start:
 	movl $stack_top, %esp
 	push %ebx
-	call kernel_main
+	cli
+	mov %cr0,%eax
+	and $0,%al
+	mov %eax,%cr0
+	sti
+	;call kernel_main
 	cli
 	hlt
 .Lhang:

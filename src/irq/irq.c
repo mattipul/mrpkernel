@@ -1,18 +1,14 @@
 #include "irq.h"
 
-extern void irq_divide_by_zero_wrapper();
+extern void irq_clock_wrapper();
 
 void irq_init(){
-	uint16_t *irq0_addr=0x0000;
-	irq0_addr[0]=&irq_divide_by_zero_wrapper;
-	kernel_debug_binary(irq0_addr[0]);
+	uint32_t *irq0_addr=0x0020;
+	irq0_addr[0]=&irq_clock_wrapper;
+	//kernel_debug_binary(irq0_addr[0]);
 }
 
-void irq_divide_by_zero(){
-	uint16_t *buf=(uint16_t*)0xB8000;
-	buf[0]='M' | (15 | 1 << 4) << 8;
-}
-
-void irq_clock(){
-	scheduler_wait();
+void irq_clock(){	
+     uint16_t *buf=(uint16_t*)0xB8000;
+     buf[0]='M' | (15 | 1 << 4) << 8;
 }

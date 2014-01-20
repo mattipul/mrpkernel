@@ -14,13 +14,8 @@ void process_2(){
 
 void kernel_init(){
 	kernel_debug_init();
-//	irq_init();
-	asm volatile(".code16\n\t");
-	asm volatile("int $0\n\t"
-		     "iret\n\t");	
-	asm volatile(".code32\n\t");
-	kernel_debug_binary(3);
-	
+	irq_init();
+	while(1);
 	pid_counter=0;
 	memory_stack_pointer=MEMORY_BLOCK_START;
 	process_counter=0;

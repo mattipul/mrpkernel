@@ -19,7 +19,7 @@ void kernel_init(){
 	asm volatile("int $0\n\t"
 		     "iret\n\t");	
 	asm volatile(".code32\n\t");
-	kernel_debug_binary(1);
+	kernel_debug_binary(3);
 	
 	pid_counter=0;
 	memory_stack_pointer=MEMORY_BLOCK_START;
